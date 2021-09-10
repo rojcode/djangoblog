@@ -7,6 +7,78 @@
 
 
 {% block content %}
+
+<!--grid-layout-->
+<section class="section pt-85">
+    <div class="container-fluid">
+        <div class="row">
+            {% for post in all__post %}
+            <div class="col-lg-6 col-md-6">
+                <div class="post-card">
+                    <div class="post-card-image">
+                        <a href="post-default.html">
+                            <img src="{{post.poster.url}}" alt="{{post.tile}}">
+                        </a>
+
+                    </div>
+                    <div class="post-card-content">
+                        <a href="blog-grid.html" class="categorie">{{post.category.name}}</a>
+                        <h5>
+                            <a href="post-default.html"></a>{{post.title}}</a>
+                        </h5>
+                        <p>
+                            {{post.short_description}}
+                        </p>
+                        <div class="post-card-info">
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="author.html">
+                                        <img src="assets/img/author/1.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="author.html">{{post.author.username}}</a>
+                                </li>
+                                <li class="dot"></li>
+                                <li>{{post.publish}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>                
+                <!--/-->
+            </div>
+            {% endfor %}
+            </div>
+
+            <!--pagination-->
+            <div class="col-lg-12">
+                <div class="pagination mt--10">
+                    <ul class="list-inline">
+                        <li class="active">
+                            <a href="#">1</a>
+                        </li>
+                        <li>
+                            <a href="#">2</a>
+                        </li>
+                        <li>
+                            <a href="#">3</a>
+                        </li>
+                        <li>
+                            <a href="#">4</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="arrow_carrot-2left"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--/-->
+            </div>
+        </div>
+    </div>
+</section>
+<!--/-->
     
 {% endblock content %}
     
