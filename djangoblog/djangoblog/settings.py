@@ -42,6 +42,10 @@ INSTALLED_APPS = [
     # local
     'pages.apps.PagesConfig',
     'blog.apps.BlogConfig',
+
+    # 3rd party
+    'ckeditor',
+    'taggit',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +136,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# ckeditor
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+CKEDITOR_UPLOAD_SLUGIFY_FILENAME = False
+CKEDITOR_RESTRICT_BY_USER = True
+CKEDITOR_BROWSE_SHOW_DIRS = True
+
+# taggit 
+TAGGIT_CASE_INSENSITIVE = True

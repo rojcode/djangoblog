@@ -1,10 +1,11 @@
+import os
 from django.db import models
 from django.utils import timezone
-import os
 from uuid import uuid4
+from ckeditor_uploader.fields import RichTextUploadingField
+from taggit.managers import TaggableManager
 
 # Create your models here.
-
 
 def path_and_rename_poster_image(instance,filename):
      upload_to = 'uploads/blog/'
@@ -30,8 +31,10 @@ class Post(models.Model):
     title = models.CharField(max_length=250)
     poster = models.ImageField(upload_to=path_and_rename_poster_image)
     short_description = models.TextField()
+    body = RichTextUploadingField()
     author = models.ForeignKey('auth.User',on_delete=models.CASCADE)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
+    tags = TaggableManager()
     publish = models.DateTimeField(default=timezone.now)
 
     def __str__(self): 
