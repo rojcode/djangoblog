@@ -16,7 +16,7 @@
             <div class="col-lg-6 col-md-6">
                 <div class="post-card">
                     <div class="post-card-image">
-                        <a href="post-default.html">
+                        <a href="{% url 'blog_detail' post.id %}">
                             <img src="{{post.poster.url}}" alt="{{post.tile}}">
                         </a>
 
@@ -24,7 +24,7 @@
                     <div class="post-card-content">
                         <a href="blog-grid.html" class="categorie">{{post.category.name}}</a>
                         <h5>
-                            <a href="post-default.html"></a>{{post.title}}</a>
+                            <a href="{% url 'blog_detail' post.id %}"></a>{{post.title}}</a>
                         </h5>
                         <p>
                             {{post.short_description}}

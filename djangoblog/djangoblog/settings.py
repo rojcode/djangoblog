@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # local
     'pages.apps.PagesConfig',
     'blog.apps.BlogConfig',
+    'accounts.apps.AccountsConfig',
 
     # 3rd party
     'ckeditor',

@@ -1,0 +1,444 @@
+{% extends "__base.html" %}
+{% load static %}
+
+
+{% block title %}
+    
+{% endblock title %}
+
+
+
+{% block content %}
+     <!--post-default-->
+     <section class="section pt-55 ">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 mb-20">
+                    <!--Post-single-->
+                    <div class="post-single">
+                        <div class="post-single-image">
+                            <img src="{{ post.poster.url }}" alt="{{post.title}}">
+                        </div>
+                        <div class="post-single-content">
+                            <a href="blog-grid.html" class="categorie">{{post.category.name}}</a> 
+                            <h4>{{post.title}}</h4>
+                            <div class="post-single-info">
+                                <ul class="list-inline">
+                                    <li><a href="">
+                                        <img src="{{ request.user.avatar_profile.image.url }}" alt=""></a>
+                                    </li>
+                                    <li><a href="author.html">{{user.username}}</a> </li>
+                                    <li class="dot"></li>
+                                    <li>{{post.publish}}</li>
+                                    <li class="dot"></li>
+                                    <li>3 تعليقات</li>
+                                </ul>
+                            </div>
+                        </div>
+                  
+                        <div class="post-single-body">
+                        {{post.body | safe}}
+                        </div>
+
+                        <div class="post-single-footer">
+                            <div class="tags">
+                                <ul class="list-inline">
+                                    {% for tg in post.tags.all %}
+                                <li>
+                                    <a href="blog-grid.html">{{tg.name}}</a>
+                                </li>
+                                {% if not forloop.last %}, {% endif %}
+                                {% endfor %}
+                                
+                                </ul>
+                            </div>
+                            <div class="social-media">
+                                <ul class="list-inline">
+                                    <li>
+                                        <a href="#" class="color-facebook">
+                                            <i class="fab fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="color-instagram">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="color-twitter">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="color-youtube">
+                                            <i class="fab fa-youtube"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="color-pinterest">
+                                            <i class="fab fa-pinterest"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>                           
+                        </div>
+                    </div> <!--/-->
+
+                    <!--next & previous-posts-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="widget">
+                                <div class="widget-next-post">
+                                    <div class="small-post">
+                                        <div class="image">
+                                            <a href="post-default.html">
+                                            <img src="" alt="...">
+                                            </a>                                          
+                                        </div>
+                                        <div class="content">
+                                            <div>
+                                                <a class="link" href="post-default.html"><i class="arrow_right"></i>المقال السابق</a>
+                                            </div>
+                                            <a href="post-default.html">7 وصفات عشاء صحي لقضاء ليلة في المنزل</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="widget">
+                                <div class="widget-previous-post">
+                                    <div class="small-post">
+                                        <div class="image">
+                                            <a href="post-default.html">
+                                               <img src="assets/img/blog/2.jpg" alt="...">
+                                            </a>
+                                        </div>
+                                        <div class="content">
+                                            <div>
+                                                <a class="link" href="post-default.html">
+                                                    <span> المقال التالي</span>
+                                                    <span class="arrow_left"></span>
+                                                </a>
+                                            </div>
+                                            <a href="post-default.html">كيفية اختيار ملابس العمل للنساء والرجال</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/-->
+
+                    <!--widget-comments-->
+                    <div class="widget mb-50">
+                        <div class="title">
+                            <h5>3 تعليقات</h5>
+                        </div>
+                        <ul class="widget-comments">
+                            <li class="comment-item">
+                                <img src="assets/img/user/1.jpg" alt="">
+                                <div class="content">
+                                    <ul class="info list-inline">
+                                        <li>محمد علي</li>
+                                        <li class="dot"></li>
+                                        <li> 15 يناير 2021</li>
+                                    </ul>
+                                    <p>خسائر اللازمة ومطالبة حدة بل. الآخر الحلفاء أن غزو, إجلاء وتنامت عدد مع. لقهر معركة لبلجيكا، بـ انه, ربع الأثنان المقيتة
+                                    في, اقتصّت المحور حدة و. هذه ما طرفاً عالمية استسلام, الصين وتنامت ,
+                                     
+                                    </p>
+                                    <div><a href="#" class="link"> <i class="arrow_back"></i> رد</a></div>
+                                </div>
+                            </li>
+                            <li class="comment-item">
+                                <img src="assets/img/author/1.jpg" alt="">
+                                <div class="content">
+                                    <ul class="info list-inline">
+                                        <li>سيمون البرت</li>
+                                        <li class="dot"></li>
+                                        <li> 15 يناير 2021</li>
+                                    </ul>
+                                                      
+                                    <p>خسائر اللازمة ومطالبة حدة بل. الآخر الحلفاء أن غزو, إجلاء وتنامت عدد مع. لقهر معركة لبلجيكا، بـ انه, ربع الأثنان المقيتة
+                                        في, اقتصّت المحور حدة و. هذه ما طرفاً عالمية استسلام, الصين وتنامت ,
+                                    
+                                    </p>
+                                    <div>
+                                        <a href="#" class="link">
+                                            <i class="arrow_back"></i> رد</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="comment-item">
+                                <img src="assets/img/user/2.jpg" alt="">
+                                <div class="content">
+                               
+                                    <ul class="info list-inline">
+                                        <li>ادام بوبلي</li>
+                                        <li class="dot"></li>
+                                        <li> 15 يناير 2021</li>
+                                    </ul>
+                    
+                                    <p>خسائر اللازمة ومطالبة حدة بل. الآخر الحلفاء أن غزو, إجلاء وتنامت عدد مع. لقهر معركة لبلجيكا، بـ انه, ربع الأثنان المقيتة
+                                        في, اقتصّت المحور حدة و. هذه ما طرفاً عالمية استسلام, الصين وتنامت ,
+                                    
+                                    </p>
+
+                                    <div>
+                                        <a href="#" class="link">
+                                            <i class="arrow_back"></i> رد</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                       <!--Leave-comments-->
+                        <div class="title">
+                            <h5>اترك تعليق</h5>
+                        </div>
+                        <form class="widget-form" action="#" method="POST" id="main_contact_form">
+                            <p>.لن يتم نشر عنوان بريدك الإلكتروني ، الحقول الإلزامية مشار إليها *</p>
+                            <div class="alert alert-success contact_msg" style="display: none" role="alert">
+                                Your message was sent successfully.
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea name="message" id="message" cols="30" rows="5" class="form-control" placeholder="تعليق*" required="required"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="name" id="name" class="form-control" placeholder="الاسم*" required="required">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" name="email" id="email" class="form-control" placeholder="البريد*" required="required">
+                                    </div>
+                                </div>
+                                <div class="col-12 mb-20">
+                                    <div class="form-group">
+                                        <input type="text" name="website" id="website" class="form-control" placeholder="الموقع">
+                                    </div>
+                                    <label>
+                                        <input name="name" type="checkbox" value="1" required="required"> 
+                                       <span>احفظ اسمي والبريد الإلكتروني والموقع الإلكتروني في هذا المتصفح لاستخدامها المرة المقبلة في تعليقي.</span>                                   
+                                    </label>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" name="submit" class="btn-custom">
+                                        ارسال تعليق
+                                    </button>
+                                </div> 
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4 max-width">
+                    <!--widget-author-->
+                    <div class="widget">
+                        <div class="widget-author">
+                            <a href="author.html" class="image">
+                                <img src="{{request.user.avatar_profile.image.url}}" alt="">
+                            </a>
+                            <h6>
+                                <span>{{user.username}}</span>
+                            </h6>
+                            <p>
+
+                            {{request.user.avatar_profile.bio}}
+                        </p>
+                    
+                    
+                            <div class="social-media">
+                                <ul class="list-inline">
+                                    <li>
+                                        <a href="#" class="color-facebook">
+                                            <i class="fab fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="color-instagram">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="color-twitter">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="color-youtube">
+                                            <i class="fab fa-youtube"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="color-pinterest">
+                                            <i class="fab fa-pinterest"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/-->
+
+                    <!--widget-latest-posts-->
+                    <div class="widget ">
+                        <div class="section-title">
+                            <h5>احدث المقالات</h5>
+                        </div>
+                        <ul class="widget-latest-posts">
+                            <li class="last-post">
+                                <div class="image">
+                                    <a href="post-default.html">
+                                        <img src="assets/img/latest/1.jpg" alt="...">
+                                    </a>
+                                </div>
+                                <div class="nb">1</div>
+                                <div class="content">
+                                    <p><a href="post-default.html">5 أشياء أتمنى أن أعرفها قبل السفر إلى ماليزيا</a></p>
+                                    <small><span class="icon_clock_alt"></span> 15 يناير 2021</small>
+                                </div>
+                            </li>
+                            <li class="last-post">
+                                <div class="image">
+                                    <a href="post-default.html">
+                                    <img src="assets/img/latest/2.jpg" alt="...">
+                                    </a> 
+                                </div>
+                                <div class="nb">2</div>
+                                <div class="content">
+                                    <p>
+                                        <a href="post-default.html">كل ما تحتاج لمعرفته حول زيارة الأمازون.</a>
+                                    </p>
+                                    <small>
+                                        <span class="icon_clock_alt"></span> 15 يناير 2021</small>
+                                </div>
+                            </li>
+                            <li class="last-post">
+                                <div class="image">
+                                    <a href="post-default.html">
+                                    <img src="assets/img/latest/3.jpg" alt="...">
+                                    </a>
+                                </div>
+                                <div class="nb">3</div>
+                                <div class="content">
+                                    <p>
+                                        <a href="post-default.html">كيف تقضي إجازة ممتعة بعد العمل الشاق؟</a>
+                                    </p>
+                                    <small>
+                                        <span class="icon_clock_alt"></span> 15 يناير 2021</small>
+                                </div>
+                            </li>
+                            <li class="last-post">
+                                <div class="image">
+                                    <a href="post-default.html">
+                                     <img src="assets/img/latest/4.jpg" alt="...">
+                                    </a>
+                                </div>
+                                <div class="nb">4</div>
+                                <div class="content">
+                                    <p>
+                                        <a href="post-default.html">أفضل وأجمل 10 أماكن للزيارة في إيطاليا</a>
+                                    </p>
+                                    <small>
+                                        <span class="icon_clock_alt"></span> 15 يناير 2021</small>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/-->
+                   
+                    <!--widget-categories-->
+                    <div class="widget">
+                        <div class="section-title">
+                            <h5>تصنيفات</h5>
+                        </div>
+                        <ul class="widget-categories">
+                            <li>
+                                <span class="ml-auto">22 مقالات</span>
+                                <a href="#" class="categorie">اسلوب حياة</a> 
+                               
+                            </li>
+                            <li>
+                                
+                                <span class="mr-auto">18 مقالات</span>
+                                <a href="#" class="categorie">السفر</a>
+                            </li>
+                            <li>
+                                <a href="#" class="categorie">الطعام</a>
+                                <span class="mr-auto">14 مقالات</span>
+                            </li>
+                            <li>
+                                <a href="#" class="categorie">موضة</a>
+                                <span class="mr-auto">10 مقالات</span>
+                            </li>
+                        </ul>
+                    </div><!--/-->
+                    
+                    <!--widget-instagram-->
+                    <div class="widget">
+                        <div class="section-title">
+                            <h5>انستغرام</h5>
+                        </div>
+                        <ul class="widget-instagram">
+                            <li>
+                                <a class="image" href="#">
+                                    <img src="assets/img/instagram/1.jpg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a class="image" href="#">
+                                    <img src="assets/img/instagram/2.jpg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a class="image" href="#">
+                                    <img src="assets/img/instagram/3.jpg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a class="image" href="#">
+                                    <img src="assets/img/instagram/4.jpg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a class="image" href="#">
+                                    <img src="assets/img/instagram/5.jpg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a class="image" href="#">
+                                    <img src="assets/img/instagram/6.jpg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                            
+                    </div><!--/-->
+
+                    <!--widget-tags-->
+                    <div class="widget">
+                        <div class="section-title">
+                            <h5>وسوم</h5>
+                        </div>
+                        <div class="widget-tags">
+                            <ul class="list-inline">
+                                {% for tg in post.tags.all %}
+                                <li>
+                                    <a href="blog-grid.html">{{tg.name}}</a>
+                                </li>
+                                {% if not forloop.last %}, {% endif %}
+                                {% endfor %}
+                                
+                        
+                            </ul>
+                        </div>
+                    </div>
+                    <!--/-->
+                </div> 
+            </div>
+        </div>
+    </section><!--/-->
+{% endblock content %}
+
